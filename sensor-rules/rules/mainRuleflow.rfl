@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>mainRuleflow</name>
+  <uuid>2b7b87ee-21e1-4df0-9d22-d9935f903b55</uuid>
+  <locale>en_US</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_1">
+        <Actions Language="bal"><![CDATA[compute the feels like temperature for 'the sensor' ;]]></Actions>
+      </StartTask>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="generateWarning" Ordering="Default">
+        <RuleList>
+          <Rule Uuid="ffaae39d-4b16-4481-9541-c7b5d71215ff"/>
+        </RuleList>
+      </RuleTask>
+      <StopTask Identifier="task_2"/>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node_0" Task="task_1"/>
+      <TaskNode Identifier="node_1" Task="task_2"/>
+      <TaskNode Identifier="node_2" Task="generateWarning"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="transition_1" Source="node_0" Target="node_2"/>
+      <Transition Identifier="transition_2" Source="node_2" Target="node_1"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="en_US">
+      <Data Name="node_0#height">21.0</Data>
+      <Data Name="node_2#height">40.0</Data>
+      <Data Name="node_2#width">134.05664</Data>
+      <Data Name="node_1#name">node_1</Data>
+      <Data Name="node_0#y">-77.5</Data>
+      <Data Name="node_0#x">-62.971649169921875</Data>
+      <Data Name="node_1#x">-62.97169494628906</Data>
+      <Data Name="node_1#width">21.99997</Data>
+      <Data Name="node_1#y">41.0</Data>
+      <Data Name="node_1#height">22.0</Data>
+      <Data Name="node_2#x">-62.9716796875</Data>
+      <Data Name="node_2#y">-18.0</Data>
+      <Data Name="node_0#width">21.0</Data>
+      <Data Name="node_0#name">node_0</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties>
+    <imports/>
+  </Properties>
+</Ruleflow></rfModel>
+  <mainFlowTask>true</mainFlowTask>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

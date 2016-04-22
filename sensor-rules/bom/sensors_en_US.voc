@@ -1,0 +1,18 @@
+# Vocabulary Properties
+uuid = fb4bc7e4-6fb5-4b67-a385-f609868b27b2
+
+# com.acme.sensors.model.Sensor
+com.acme.sensors.model.Sensor#concept.label = sensor
+com.acme.sensors.model.Sensor.computeFeelsLikeTemperature()#phrase.action = compute the feels like temperature for {this}
+com.acme.sensors.model.Sensor.feelsLikeTemp#phrase.navigation = {feels like temp} of {this}
+com.acme.sensors.model.Sensor.humidity#phrase.action = set the humidity of {this} to {humidity}
+com.acme.sensors.model.Sensor.humidity#phrase.navigation = {humidity} of {this}
+com.acme.sensors.model.Sensor.name#phrase.navigation = {name} of {this}
+com.acme.sensors.model.Sensor.objectTemp#phrase.action = set the object temp of {this} to {object temp}
+com.acme.sensors.model.Sensor.objectTemp#phrase.navigation = {object temp} of {this}
+com.acme.sensors.model.Sensor.temp#phrase.action = set the temp of {this} to {temp}
+com.acme.sensors.model.Sensor.temp#phrase.navigation = {temp} of {this}
+com.acme.sensors.model.Sensor.type#phrase.action = set the type of {this} to {type}
+com.acme.sensors.model.Sensor.type#phrase.navigation = {type} of {this}
+com.acme.sensors.model.Sensor.warning#phrase.action = set the warning of {this} to {warning}
+com.acme.sensors.model.Sensor.warning#phrase.navigation = {warning} of {this}

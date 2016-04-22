@@ -1,0 +1,128 @@
+// begin DT generateWarning
+// -- begin rule 'generateWarning 0'
+package sensor {
+   rule generateWarning_0 {
+      property ilog.rules.business_name = "generateWarning 1";
+      property ilog.rules.dt = "sensor.generateWarning";
+      property ilog.rules.group = "sensor.generateWarning";
+      property ilog.rules.package_name = "sensor";
+      property status = "new";
+      when {
+         com.acme.sensors.model.Sensor() from sensor;
+         evaluate ((((sensor.type.equals("indoor"))) && (sensor.feelsLikeTemp < 18)));
+      } then {
+         sensor.warning = "Turn on heating";
+      }
+   }
+}
+
+// -- end rule 'generateWarning 0'
+// -- begin rule 'generateWarning 1'
+package sensor {
+   rule generateWarning_1 {
+      property ilog.rules.business_name = "generateWarning 2";
+      property ilog.rules.dt = "sensor.generateWarning";
+      property ilog.rules.group = "sensor.generateWarning";
+      property ilog.rules.package_name = "sensor";
+      property status = "new";
+      when {
+         com.acme.sensors.model.Sensor() from sensor;
+         evaluate ((((sensor.type.equals("indoor"))) && (sensor.feelsLikeTemp in [18, 26])));
+      } then {
+         sensor.warning = "Turn off heating, airconditioning";
+      }
+   }
+}
+
+// -- end rule 'generateWarning 1'
+// -- begin rule 'generateWarning 2'
+package sensor {
+   rule generateWarning_2 {
+      property ilog.rules.business_name = "generateWarning 3";
+      property ilog.rules.dt = "sensor.generateWarning";
+      property ilog.rules.group = "sensor.generateWarning";
+      property ilog.rules.package_name = "sensor";
+      property status = "new";
+      when {
+         com.acme.sensors.model.Sensor() from sensor;
+         evaluate ((((sensor.type.equals("indoor"))) && (sensor.feelsLikeTemp in [26, 35])));
+      } then {
+         sensor.warning = "Turn on airconditioning";
+      }
+   }
+}
+
+// -- end rule 'generateWarning 2'
+// -- begin rule 'generateWarning 3'
+package sensor {
+   rule generateWarning_3 {
+      property ilog.rules.business_name = "generateWarning 4";
+      property ilog.rules.dt = "sensor.generateWarning";
+      property ilog.rules.group = "sensor.generateWarning";
+      property ilog.rules.package_name = "sensor";
+      property status = "new";
+      when {
+         com.acme.sensors.model.Sensor() from sensor;
+         evaluate ((((sensor.type.equals("indoor"))) && (sensor.feelsLikeTemp > 35)));
+      } then {
+         sensor.warning = "Urgent! Turn on airconditioning";
+      }
+   }
+}
+
+// -- end rule 'generateWarning 3'
+// -- begin rule 'generateWarning 4'
+package sensor {
+   rule generateWarning_4 {
+      property ilog.rules.business_name = "generateWarning 5";
+      property ilog.rules.dt = "sensor.generateWarning";
+      property ilog.rules.group = "sensor.generateWarning";
+      property ilog.rules.package_name = "sensor";
+      property status = "new";
+      when {
+         com.acme.sensors.model.Sensor() from sensor;
+         evaluate ((((sensor.type.equals("outdoor"))) && (sensor.feelsLikeTemp in [-20, 0])));
+      } then {
+         sensor.warning = "Below freezing point!";
+      }
+   }
+}
+
+// -- end rule 'generateWarning 4'
+// -- begin rule 'generateWarning 5'
+package sensor {
+   rule generateWarning_5 {
+      property ilog.rules.business_name = "generateWarning 6";
+      property ilog.rules.dt = "sensor.generateWarning";
+      property ilog.rules.group = "sensor.generateWarning";
+      property ilog.rules.package_name = "sensor";
+      property status = "new";
+      when {
+         com.acme.sensors.model.Sensor() from sensor;
+         evaluate ((((sensor.type.equals("outdoor"))) && (sensor.feelsLikeTemp in [30, 40])));
+      } then {
+         sensor.warning = "Rising temperatures, limit outdoor time in daylight";
+      }
+   }
+}
+
+// -- end rule 'generateWarning 5'
+// -- begin rule 'generateWarning 6'
+package sensor {
+   rule generateWarning_6 {
+      property ilog.rules.business_name = "generateWarning 7";
+      property ilog.rules.dt = "sensor.generateWarning";
+      property ilog.rules.group = "sensor.generateWarning";
+      property ilog.rules.package_name = "sensor";
+      property status = "new";
+      when {
+         com.acme.sensors.model.Sensor() from sensor;
+         evaluate ((((sensor.type.equals("outdoor"))) && (sensor.feelsLikeTemp > 40)));
+      } then {
+         sensor.warning = "Extreme Heat warning, keep hydrated and stay inside during the day";
+      }
+   }
+}
+
+// -- end rule 'generateWarning 6'
+// end DT generateWarning

@@ -1,0 +1,25 @@
+
+
+flowtask mainRuleflow {
+  property mainflowtask = true;
+  property ilog.rules.business_name = "mainRuleflow";
+  property ilog.rules.package_name = "";
+  initialaction {
+    sensor.computeFeelsLikeTemperature();
+  };
+  body {
+    mainRuleflow#generateWarning;
+  }
+};
+
+ruletask mainRuleflow#generateWarning {
+  property ilog.rules.business_name = "mainRuleflow>generateWarning";
+  property ilog.rules.package_name = "";
+  algorithm = sequential;
+  property ilog.rules.engine.sequential.fastpath = true;
+  ordering = sorted;
+  body {
+    group("sensor.generateWarning")
+  }
+};
+

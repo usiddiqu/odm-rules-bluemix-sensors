@@ -1,0 +1,22 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/sensor-rules//sensor-xom"
+property uuid "f33b1984-1884-4be1-9c29-855205c645aa"
+package com.acme.sensors.model;
+
+
+public class Sensor
+{
+    public readonly double feelsLikeTemp;
+    public double humidity;
+    public string name;
+    public double objectTemp;
+    public double temp;
+    public string type;
+    public string warning;
+    public Sensor(string arg1, string arg2, double arg3, double arg4, double arg5);
+    public Sensor();
+    public void computeFeelsLikeTemperature();
+    public string toString();
+}
+
